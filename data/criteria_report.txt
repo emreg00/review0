@@ -1,0 +1,10 @@
+**Quality of Science and Novelty** [Headers starting with ** are ignored]
+    * Main contribution of the report
+    * Novelty of the scientific approach
+    * Quality and robustness of the presented data 
+**Quality of Methodology and Analysis**
+    * Soundness of the statistical data analysis 
+    * Suitability of the methods 
+**Relevance of Results and Conclusions**
+    * Sufficieny of evindence supporting the results 
+    * Soundness of evindence supporting the conclusions 

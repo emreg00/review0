@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "review0"
+requires-python = ">3.8"
+version = "0.1.0"
+description = "AI-assisted rassessment of project proposals and technical documentation using local LLMs"
+readme = "README.rst"
+authors = [
+  {name = "Emre Guney", email = "emreguney@gmail.com"}
+]
+maintainers = [
+  {name = "Emre Guney", email = "emreguney@gmail.com"}
+]
+classifiers = [
+
+]
+license = {text = "MIT license"}
+dependencies = [
+  "typer",
+  "pypdf",
+  "numpy",
+  "langchain_ollama",
+  "langchain"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",  # testing
+]
+
+[project.urls]
+
+bugs = "https://github.com/emreg00/review0/issues"
+changelog = "https://github.com/emreg00/review0/blob/master/changelog.md"
+homepage = "https://github.com/emreg00/review0"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.package-data]
+"*" = ["*.*"]
+
