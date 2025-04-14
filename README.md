@@ -3,8 +3,10 @@ Review 0
 
 AI-assisted rassessment of project proposals and technical documentation using local LLMs
 
+
 Summary
 -------
+
 This project aims to support review of grant proposals and scientific articles using LLMs  
 putting an emphasis on using local resources such as quantized Ollama models. It does not aim to replace 
 the reviewer but help her/him by providing an overview and highlighting potential strengths and weaknesses.
@@ -23,8 +25,10 @@ The code was tested using various Ollama models (such as mistral, openchat, gemm
 
 _Disclaimer: It is important to note that the output produced by the LLMs is not always correct and should be fact-checked by the user._
 
+
 Requirements
 ------------
+
 - Python 3.8 or higher
 - [Langchain](https://python.langchain.com/) and [langchain-ollama](https://python.langchain.com/docs/integrations/chat/ollama/)
 - [Numpy](https://numpy.org/)
@@ -45,6 +49,7 @@ $ ollama pull mistral
 
 Features
 --------
+
 - PDF parsing
 - Text chunking
 - Vectorstore generation
@@ -53,17 +58,39 @@ Features
 - Default questions & prompts for project proposals and technical reports
 - _(under development)_ Customizable prompts 
 
+
+Installation
+------------
+
+To install the code as a python package run the following inside the directory containing the repository:
+
+`python -m pip install .`
+
+See usage below to run it on the command line. To use the functions inside the python:
+
+```python
+from review0 import llm
+model = llm.load_model(model_name="mistral", temperature=1, num_predict = 512, num_ctx=2048)
+result = llm.query(model, "What is the answer to the life and universe?")
+print(result.content)
+```
+
+
 Usage
 -----
+
 `python main.py --model-name <llm_model(default:mistral)> --temperature <llm_temperature(default:0.7)> <path_to_content_file(pdf)> <path_to_criteria_file_in(txt)>`
 
-Example code to analyze test.pdf using the report criteria (under data folder) with default parameters (model and temprature)
+Accordingly, the following example can be used to analyze test.pdf using the report criteria (under data folder) with default parameters (model and temprature)
+
 `python main.py ../../data/test.pdf ../../data/criteria_report.txt`
+
 
 TODO
 ----
+
 - Extract params / prompts as config files (yaml)
-- Generate docs
+- Generate documentation from docstrings
 - Add more tests and tox for different python versions
 - Consider supporting PDF parse figures & checkboxes
 - Consider supporting for additional (non-PDF) formats
@@ -71,6 +98,7 @@ TODO
 
 Related work
 ------------
+
 - [LLM4SR: A Survey on Large Language Models for Scientific Research](https://github.com/du-nlp-lab/LLM4SR?tab=readme-ov-file#llms-for-peer-reviewing)
 - [What Can Natural Language Processing Do for Peer Review?](https://arxiv.org/html/2405.06563v1)
 - [AgentReview: Exploring Peer Review Dynamics with LLM Agents](https://arxiv.org/abs/2406.12708v2)
@@ -81,4 +109,5 @@ Related work
 
 License
 -------
+
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
