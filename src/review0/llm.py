@@ -63,7 +63,7 @@ def load_vectorstore(model_name, list_of_ids, list_of_texts, list_of_tags=None, 
     all_splits = text_splitter.split_documents(docs)
     # Index chunks
     _ = vector_store.add_documents(documents=all_splits)
-    return vector_store
+    return vector_store, all_splits
 
 
 def get_qarag_prompt(model_name, vector_store, question):

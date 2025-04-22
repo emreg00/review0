@@ -9,3 +9,8 @@ History
 * Added tests and command line interface
 * Improved README
 
+0.1.1 (2025-04-22)
+------------------
+
+* Added language revision functionality 
+* README update with usage examples
